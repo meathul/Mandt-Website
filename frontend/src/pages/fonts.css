@@ -1,0 +1,142 @@
+.intro-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 850px;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../assets/IntroPic.png');
+    background-attachment: fixed;
+}
+
+.intro{
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 90px;
+    text-align: center;
+    color: white;
+    margin-top: 9%;
+}
+
+.logo {
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    margin-left: 20px;
+    color: #FCEACA;
+    padding: 10px;
+}
+
+.shop-button{
+    margin-top: 2%;
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(241, 241, 241, 0.842);
+    align-self: center;
+    width: 200px;
+    height: 60px;
+    font-size: 17px;
+    border-radius: 20px;
+}
+
+.mandt-caption{
+    font-family: "Ibarra Real Nova", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7%;
+}
+
+.category-men{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+}
+
+.our-story{
+    margin-top: 10%;
+    background-color: #FCEACA;
+    padding: 6%;
+    padding-left: 9%;
+    display: flex;
+    flex-direction: row;
+}
+
+.story-img{
+    object-fit: contain;
+    width: 100%;
+    height: 550px;
+    flex: 1;
+}
+
+.story-content{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.story-title{
+    margin-top: 2%;
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.story-desc{
+    margin-top: 6%;
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 70%;
+    text-align: center;
+    font-size: 26px;
+}
+
+.bottom-line{
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 18px;
+    gap: 2%;
+}
+
+.bottom-logo{
+    display: grid;
+    grid-row: 1;
+    align-items: center
+}
+
+
+.bottom-img{
+    object-fit: contain;
+    width: 100%;
+    height: 20px;
+    margin-left: 20%;
+}
