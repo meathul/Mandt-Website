@@ -1,0 +1,84 @@
+.home-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.home-logo{
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80px;
+    color: #A6754F;
+}
+
+.home-img{
+    height: 40px;
+    width: 40px;
+}
+
+.header-line{
+    margin-top: 2%;
+    width: 90%;
+}
+
+.home-desc{
+    margin-top: 3%;
+    font-family: "Oranienbaum", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 50px;
+    color: #A77650;
+}
+
+.home-her{
+    margin-top: 3%;
+    width: 100%;
+    height: 200px;
+    background-image: url('../assets/for_her.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-him{
+    margin-top: 3%;
+    width: 100%;
+    height: 192px;
+    background-image: url('../assets/for_him.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-them{
+    margin-top: 3%;
+    width: 100%;
+    height: 200px;
+    background-image: url('../assets/for_them.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.her-title{
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.her-desc{
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}

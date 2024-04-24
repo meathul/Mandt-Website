@@ -6,6 +6,7 @@ import womenImg from '../assets/women.png'
 import line from '../assets/line.png'
 import ourStory from '../assets/ourStory.png'
 import { motion, useInView, useAnimation } from "framer-motion"
+import { Link } from 'react-router-dom'
 
 
 const LandingPage = () => {
@@ -30,7 +31,9 @@ const LandingPage = () => {
                 Much More Than<br></br>Perfume
             </p>
             <button className='shop-button'>
-                SHOP NOW
+                <Link to={`/home`}>
+                    SHOP NOW
+                </Link>                
             </button>
         </div>
         <div>
