@@ -1,0 +1,98 @@
+.cart-item{
+    margin-top: 4%;
+    border: 2px solid #B49066;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.item-img{
+    border-radius: 10px;
+    height: 250px;
+    background-size: cover;
+}
+
+.item-title{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.item-price{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    /*color: #B49066;*/
+}
+
+.item-quantity{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: "Orienta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /*color: #B49066;*/
+    font-size: 20px;
+}
+
+.bill-container{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    border: 2px solid #B49066;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10%;
+    padding-top: 8%;
+    width: 100%;
+}
+
+.grand-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+    color: #B49066;
+    width: 100%;
+}
+
+.grand-button{
+    width: 32%;
+    background-color: #B49066;
+    color: white;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.coupon-button{
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 5%;
+    margin-bottom: 12%;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #B49066;
+    border-radius: 30px;
+    color: white;
+    width: 100%;
+}

@@ -45,6 +45,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-size: cover;
 }
 
 .home-him{
@@ -56,17 +58,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-size: cover;
 }
 
 .home-them{
     margin-top: 3%;
     width: 100%;
-    height: 200px;
-    background-image: url('../assets/for_them.png');
+    height: 190px;
+    background-image: url('../assets/for_them2.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-size: cover;
 }
 
 .her-title{
@@ -74,6 +80,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
+    color: white;
 }
 
 .her-desc{
@@ -81,4 +88,34 @@
     font-weight: 400;
     font-style: normal;
     font-size: 25px;
+    color: white;
+}
+
+.cart-title{
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    align-self: center;
+}
+
+.cart-line{
+    margin-top: 2%;
+    width: 60%;
+}
+
+.item-items{
+    flex: 1;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-right: 10%;
+}
+
+.item-bill{
+    flex: 1;
+    position: fixed;
+    width: 25%;
+    margin-right: 3%;
+    margin-top: 2.5%;
 }

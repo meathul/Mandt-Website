@@ -10,6 +10,7 @@ import lineMain from '../assets/line_main.png'
 import HerTile from '../components/hertile'
 import HimTile from '../components/himtile'
 import ThemTile from '../components/themtile'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   
@@ -21,7 +22,11 @@ const Home = () => {
                 <p className='home-logo'>
                     MANDT
                 </p>
-                <img src={bag} alt="" className='home-img'/>
+                <button>
+                    <Link to={'/cart'}>
+                        <img src={bag} alt="" className='home-img'/>
+                    </Link>
+                </button>
             </div>
             <img src={lineMain} alt="" className='header-line'/>
             <p className='home-desc'>
