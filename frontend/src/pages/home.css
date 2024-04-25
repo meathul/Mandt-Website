@@ -13,7 +13,7 @@
     font-family: "Italiana", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 80px;
+    font-size: clamp(50px, 5vw, 80px);
     color: #A6754F;
 }
 
@@ -32,7 +32,7 @@
     font-family: "Oranienbaum", serif;
     font-weight: 100;
     font-style: normal;
-    font-size: 50px;
+    font-size: clamp(30px, 5vw, 50px);
     color: #A77650;
 }
 
@@ -79,30 +79,54 @@
     font-family: "Ovo", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 40px;
-    color: white;
+    font-size: clamp(30px, 5vw, 40px);
+    color: #4C2C14;
 }
 
 .him-title{
     font-family: "Ovo", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 40px;
+    font-size: clamp(30px, 5vw, 40px);
+    color: #4C2C14;
 }
 
-.her-desc{
+.them-title{
     font-family: "Ovo", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;
+    font-size: clamp(30px, 5vw, 40px);
     color: white;
 }
 
-.him-desc{
+.her-desc{
+    margin-inline: 5%;
+    text-align: center;
     font-family: "Ovo", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;
+    font-size: clamp(15px, 3vw, 25px);
+    color: #4C2C14;
+}
+
+.him-desc{
+    margin-inline: 5%;
+    text-align: center;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(15px, 3vw, 25px);
+    color: #4C2C14;
+}
+
+.them-desc{
+    margin-inline: 5%;
+    text-align: center;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(15px, 3vw, 25px);
+    color: white;
 }
 
 .cart-title{
@@ -118,7 +142,7 @@
     width: 60%;
 }
 
-.item-items{
+.item-box{
     flex: 1;
     flex-direction: column;
     margin-left: 10%;
@@ -130,7 +154,46 @@
 .item-bill{
     flex: 1;
     position: fixed;
-    width: 25%;
-    margin-right: 3%;
-    margin-top: 2.5%;
+    padding-right: 7%;
+    padding-top: 3%;
+}
+
+.bill{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+@media (max-width: 500px){
+    .home-img{
+        height: 30px;
+        width: 30px;
+    }
+    .header-line{
+        margin-bottom: 10%;
+    }
+    .home-desc{
+        margin-bottom: 10%;
+    }
+    .home-her{
+        height: 120px;
+    }
+    .home-him{
+        height: 120px;
+    }
+    .home-them{
+        height: 120px;
+    }
+    .bill{
+        flex-direction: column;
+        height: 100%;
+    }
+    .item-box{
+        padding-right: 0%;
+    }
+    .item-bill{
+        margin: 7%;
+        position: relative;
+        padding-right: 0px;
+    }
 }

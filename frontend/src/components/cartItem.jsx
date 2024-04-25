@@ -1,11 +1,11 @@
 import React from 'react'
 import './items.css'
-
+ 
 const CartItems = (props) => {
   return (
     <div className='cart-item'>
         <img src={props.pic} alt="" className='item-img'/>
-        <div className='flex flex-col justify-between mx-10 my-7'>
+        <div className='item-tile'>
             <div className='flex flex-col'>
                 <h1 className='item-title'>
                     {props.name}

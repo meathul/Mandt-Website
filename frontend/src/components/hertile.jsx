@@ -2,7 +2,7 @@ import React from 'react'
 
 const HerTile = () => {
   return (
-    <div className="home-her">
+    <div className="home-her"> 
         <h1 className='her-title'>
             FOR HER
         </h1>

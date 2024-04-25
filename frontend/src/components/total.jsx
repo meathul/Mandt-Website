@@ -5,7 +5,7 @@ import CoupCard from './couponcard'
 
 const TotalBill = () => {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='totalbill-container'>
         <div className='bill-container'>
             <h1>
                 Price Details
@@ -42,3 +42,8 @@ const TotalBill = () => {
 }
 
 export default TotalBill
+
+
+/*
+
+*/

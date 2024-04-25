@@ -2,54 +2,60 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 850px;
+    min-height: 450px;
     background-position: center;
     background-size: cover;
     background-image: url('../assets/IntroPic.png');
-    background-attachment: fixed;
+    background-attachment: none;
 }
 
 .intro{
     font-family: "Kaisei HarunoUmi", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 90px;
+    font-size: clamp(50px, 8vw, 90px);
     text-align: center;
     color: white;
-    margin-top: 9%;
-}
+    margin-top: clamp(5%, 8vh, 10%);
+    margin-inline: 5%;
+    max-width: 800px;
+    align-self: center;
+    justify-self: center;
+} 
 
 .logo {
     font-family: "Italiana", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 45px;
+    font-size: clamp(20px, 8vw, 45px);
     margin-left: 20px;
     color: #FCEACA;
     padding: 10px;
 }
 
 .shop-button{
-    margin-top: 2%;
+    margin-top: 5%;
+    margin-bottom: 15%;
     font-family: "Kaisei HarunoUmi", serif;
     font-weight: 400;
     font-style: normal;
     background-color: rgba(241, 241, 241, 0.842);
     align-self: center;
-    width: 200px;
+    width: 150px;
     height: 60px;
     font-size: 17px;
     border-radius: 20px;
 }
 
 .mandt-caption{
+    margin-inline: 5%;
     font-family: "Ibarra Real Nova", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 30px;
+    font-size: clamp(10px, 5vw, 30px);
     text-align: center;
-    margin-top: 8%;
+    margin-top: 6%;
     margin-bottom: 8%;
 }
 
@@ -73,21 +79,22 @@
 .our-story{
     margin-top: 10%;
     background-color: #FCEACA;
-    padding: 6%;
-    padding-left: 9%;
+    padding: 3%;
     display: flex;
     flex-direction: row;
+    width: auto;
 }
 
 .story-img{
+    margin-top: 3%;
     object-fit: contain;
-    width: 100%;
-    height: 550px;
+    width: 400px;
+    height: 500px;
     flex: 1;
 }
 
 .story-content{
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +105,7 @@
     font-family: "Inria Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 40px;
+    font-size: clamp(20px, 8vw, 40px);
 }
 
 .story-desc{
@@ -108,7 +115,29 @@
     font-style: normal;
     width: 70%;
     text-align: center;
-    font-size: 26px;
+    font-size: clamp(10px, 4vw, 26px);
+}
+
+@media (max-width: 500px){
+    .categories{
+        flex-direction: column;
+    }
+    .category-men{
+        margin-bottom: 20%;
+    }
+    .our-story{
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10%;
+    }
+    .story-img{
+        margin-top: 10%;
+        height: 100%;
+        width: 300px;
+    }
+    .story-desc{
+        width: 90%;
+    }
 }
 
 .bottom-line{

@@ -23,8 +23,8 @@ const Cart = () => {
                 .............
             </p>
         </div>
-        <div className='flex flex-row justify-end'>
-            <div className='item-items'>
+        <div className='bill'>
+            <div className='item-box'>
                 <CartItems pic={pd1} name="Macaron Rose" price="69"/>
                 <CartItems pic={pd1} name="Macaron Rose" price="69"/>
                 <CartItems pic={pd1} name="Macaron Rose" price="69"/>
@@ -42,5 +42,7 @@ export default Cart
 
 
 /*
-
+<div className='item-bill'>
+                <TotalBill/>
+            </div>
 */

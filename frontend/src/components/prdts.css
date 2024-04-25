@@ -5,14 +5,14 @@
     justify-content: center;
     align-items: center;
     margin: 3%;
-    margin-top: 6%;
+    margin-top: 6%; 
 }
 
 .product-box{
     margin-top: 17px;
     height: 100px;
     background-color: #CCB191;
-    /*box-shadow: 8px 8px 4px #B6B6B6;*/
+    box-shadow: 8px 8px 4px #B6B6B6;
     width: 100%;
     padding-left: 7%;
     display: flex;
@@ -32,7 +32,7 @@
     font-family: "Abhaya Libre", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: clamp(23px, 4vw, 30px);
     color: white;
     text-align: start;
     margin-top: 2%;
@@ -45,7 +45,7 @@
     font-family: "Abhaya Libre", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 22px;
+    font-size: clamp(20px, 4vw, 22px);
 }
 
 .product-add{
@@ -59,4 +59,10 @@
     height: 44px;
     border-radius: 33px;
     font-size: 17px;
+}
+
+@media (max-width: 500px) {
+    .product-card{
+        margin-block: 20%;
+    }
 }

@@ -19,10 +19,14 @@ const Home = () => {
         <div className='flex flex-col items-center'>
             <div className="home-header">
                 <img src={prf} alt="" className='home-img' />
-                <p className='home-logo'>
-                    MANDT
-                </p>
                 <button>
+                    <Link to={'/'}>
+                        <p className='home-logo'>
+                            MANDT
+                        </p>
+                    </Link>
+                </button>
+                <button> 
                     <Link to={'/cart'}>
                         <img src={bag} alt="" className='home-img'/>
                     </Link>
@@ -34,7 +38,7 @@ const Home = () => {
             </p>
         </div>
         <HerTile/>
-        <div className='flex flex-wrap justify-center'>
+        <div className='flex flex-wrap justify-center mx-10'>
             <Products name="Somebody Wood" pic={pd1} price="₹1599"/>
             <Products name="Mermaid Moon" pic={pd2} price="₹1950"/>
             <Products name="Golden Hour" pic={pd3} price="₹1550"/>
