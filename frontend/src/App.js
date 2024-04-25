@@ -7,10 +7,11 @@ import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import './App.css';
 import Cart from "./pages/Cart";
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className="App">
+    <ChakraProvider>
       <BrowserRouter>
         <Routes>
            <Route path="/" element={<LandingPage/>}/>
@@ -18,7 +19,7 @@ function App() {
            <Route path="/cart" element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
-    </div>
+    </ChakraProvider>
   );
 }
 

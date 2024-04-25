@@ -83,12 +83,26 @@
     color: white;
 }
 
+.him-title{
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
 .her-desc{
     font-family: "Ovo", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 25px;
     color: white;
+}
+
+.him-desc{
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
 }
 
 .cart-title{
@@ -110,6 +124,7 @@
     margin-left: 10%;
     margin-right: 10%;
     padding-right: 10%;
+    margin-bottom: 5%;
 }
 
 .item-bill{

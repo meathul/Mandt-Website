@@ -60,8 +60,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 5%;
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Kaisei HarunoUmi", serif;
     font-weight: 800;
     font-style: normal;
     font-size: 20px;
@@ -95,4 +94,18 @@
     border-radius: 30px;
     color: white;
     width: 100%;
+}
+
+.coupon-title{
+    font-size: 35px;
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.coupon-code{
+    font-size: 20px;
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
 }

@@ -10,7 +10,7 @@ const TotalBill = () => {
             <h1>
                 Price Details
             </h1>
-            <div className='flex flex-row text-xl mt-10 justify-between mx-10'>
+            <div className='flex flex-row text-xl mt-10 justify-between mx-8'>
                 <p>
                     MRP
                 </p>
