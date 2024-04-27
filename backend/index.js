@@ -72,6 +72,14 @@ app.get("/cart", (req, res) => {
     })
 })
 
+app.get("/coupons", (req, res) => {
+    const q = "SELECT * FROM coupons"
+    db.query(q, (err, data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
 app.post("/cart", (req, res) => {
     const q = "INSERT INTO cart (`product_id`, `product_name`, `product_price`, `product_img`, `user_id`, `quantity`) VALUES (?)"
     console.log("inserting into cart")

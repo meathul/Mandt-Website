@@ -134,6 +134,15 @@
     font-family: "Kaisei HarunoUmi", serif;
     font-weight: 400;
     font-style: normal;
+    text-align: start;
+}
+
+.coupon-desc{
+    font-size: 13px;
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: start;
 }
 
 @media(max-width: 500px){

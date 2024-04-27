@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './items.css'
 import GrandTotal from './grandbill'
 import CoupCard from './couponcard'
 
 const TotalBill = (props) => {
+  
+  const [dsc, setDsc] = useState(0)
+  /* const [sendReq, setSendReq] = useState(false)
+  const [total, setTotal] = useState(props.mrp) */
+
+  /* useEffect(() => {
+    if (sendReq) {
+        setTotal(props.mrp - ((dsc/100)*props.mrp))
+        setSendReq(false)
+    }
+  }, [sendReq, dsc, props.mrp]) */
+
+  const discountApplied = (percent) => {
+    setDsc(percent)
+    /* setSendReq(true) */
+  }
+
   return (
     <div className='totalbill-container'>
         <div className='bill-container'>
@@ -23,20 +40,20 @@ const TotalBill = (props) => {
                     Coupon Applied
                 </p>
                 <p>
-                    0%
+                    {dsc}%
                 </p>
             </div>
-            <div className='flex flex-row text-2xl font-bold mt-10 justify-between mx-8'>
+            {/* <div className='flex flex-row text-2xl font-bold mt-10 justify-between mx-8'>
                 <p>
                     Total
                 </p>
                 <p>
-                    ₹{props.mrp}
+                    ₹{props.mrp - ((dsc/100)*props.mrp)}
                 </p>
-            </div>
+            </div> */}
         </div>
-        <CoupCard/>
-        <GrandTotal total={props.mrp}/>
+        <CoupCard discountApplied={discountApplied}/>
+        <GrandTotal total={props.mrp - ((dsc/100)*props.mrp)}/>
     </div>
   )
 }
