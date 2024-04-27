@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HerTile = () => {
-  return (
+  return ( 
     <div className="home-her"> 
         <h1 className='her-title'>
             FOR HER

@@ -1,11 +1,11 @@
 import React from 'react'
 import './items.css'
 
-const GrandTotal = () => {
+const GrandTotal = (props) => {
   return (
     <div className='grand-container'>
         <p>
-            GRAND TOTAL : <br/> ₹69
+            GRAND TOTAL  <br/> ₹{props.total}
         </p>
         <button className='grand-button'>
             PLACE ORDER

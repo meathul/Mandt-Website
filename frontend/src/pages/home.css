@@ -151,6 +151,16 @@
     margin-bottom: 5%;
 }
 
+.item-empty{
+    text-align: center;
+    padding-right: 10%;
+    padding-top: 20%;
+    font-family: "Ovo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(25px, 4vw, 30px);
+}
+
 .item-bill{
     flex: 1;
     position: fixed;
@@ -170,19 +180,22 @@
         width: 30px;
     }
     .header-line{
-        margin-bottom: 10%;
+        margin-bottom: 7%;
     }
     .home-desc{
-        margin-bottom: 10%;
+        margin-bottom: 7%;
     }
     .home-her{
         height: 120px;
+        margin-bottom: 10%;
     }
     .home-him{
         height: 120px;
+        margin-bottom: 10%;
     }
     .home-them{
         height: 120px;
+        margin-bottom: 10%;
     }
     .bill{
         flex-direction: column;
@@ -195,5 +208,8 @@
         margin: 7%;
         position: relative;
         padding-right: 0px;
+    }
+    .item-empty{
+        padding-right: 0%;
     }
 }

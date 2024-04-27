@@ -52,24 +52,24 @@ const LandingPage = () => {
         >
             <div className='category-men'>
                 <img src={menImg} alt='' className='men-img'/>
-                <p className='mt-8'>
-                    MEN
+                <p className='men-name'>
+                    MEN 
                 </p>
-                <img src={line} alt="" className='mt-5' />
+                <img src={line} alt="" className='men-line' />
             </div>
             <div className='category-men'>
                 <img src={unisexImg} alt='' className='men-img'/>
-                <p className='mt-8'>
+                <p className='men-name'>
                     UNISEX
                 </p>
-                <img src={line} alt="" className='mt-5' />
+                <img src={line} alt="" className='men-line' />
             </div>
             <div className='category-men'>
                 <img src={womenImg} alt='' className='men-img'/>
-                <p className='mt-8'>
+                <p className='men-name'>
                     WOMEN
                 </p>
-                <img src={line} alt="" className='mt-5' />
+                <img src={line} alt="" className='men-line' />
             </div>
         </motion.div>
         <div className='our-story'>

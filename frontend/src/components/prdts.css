@@ -28,11 +28,16 @@
     margin-left: 5%;
 }
 
+.product-line{
+    height: 64px;
+    margin-left: 50px;
+}
+
 .product-name{
     font-family: "Abhaya Libre", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: clamp(23px, 4vw, 30px);
+    font-size: clamp(16px, 4vw, 30px);
     color: white;
     text-align: start;
     margin-top: 2%;
@@ -45,7 +50,7 @@
     font-family: "Abhaya Libre", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: clamp(20px, 4vw, 22px);
+    font-size: clamp(14px, 3vw, 22px);
 }
 
 .product-add{
@@ -61,8 +66,30 @@
     font-size: 17px;
 }
 
+.product-img{
+    border-radius: 0px;
+}
+
 @media (max-width: 500px) {
     .product-card{
-        margin-block: 20%;
+        margin-block: 10%;
+        width: 44%;
+        margin-top: 6%;
+    }
+    .product-img{
+        border-radius: 10px;
+    }
+    .product-name{
+        width: auto;
+    }
+    .product-box{
+        height: 80px;
+    }
+    .product-line{
+        margin-left: 15px;
+    }
+    .product-cart{
+        height: 35px;
+        width: 35px;
     }
 }

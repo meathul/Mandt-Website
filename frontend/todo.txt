@@ -1,0 +1,18 @@
+*main*
+
+make coupon codes db and connect
+fetch discount %
+
+calculate total amount and display
+
+successfully placed your order (?)
+
+
+
+
+*finishing touches*
+
+clean up unnecessary code and files
+environment variables
+footer for home page 
+animations

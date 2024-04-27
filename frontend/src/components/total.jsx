@@ -3,7 +3,7 @@ import './items.css'
 import GrandTotal from './grandbill'
 import CoupCard from './couponcard'
 
-const TotalBill = () => {
+const TotalBill = (props) => {
   return (
     <div className='totalbill-container'>
         <div className='bill-container'>
@@ -15,7 +15,7 @@ const TotalBill = () => {
                     MRP
                 </p>
                 <p>
-                    ₹69
+                    ₹{props.mrp}
                 </p>
             </div>
             <div className='flex flex-row text-xl mt-10 justify-between mx-8'>
@@ -28,15 +28,15 @@ const TotalBill = () => {
             </div>
             <div className='flex flex-row text-2xl font-bold mt-10 justify-between mx-8'>
                 <p>
-                    Total Amount
+                    Total
                 </p>
                 <p>
-                    ₹69
+                    ₹{props.mrp}
                 </p>
             </div>
         </div>
         <CoupCard/>
-        <GrandTotal/>
+        <GrandTotal total={props.mrp}/>
     </div>
   )
 }
