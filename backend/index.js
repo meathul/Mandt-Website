@@ -124,3 +124,6 @@ app.put("/cart/:id", (req, res)=>{
         return res.json("Quantity has been updated")
     })
 })
+
+
+// ALTER TABLE cart CHANGE COLUMN `user_id` `user_id` INT NOT NULL DEFAULT 555;

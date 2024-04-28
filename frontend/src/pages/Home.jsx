@@ -60,7 +60,7 @@ const Home = () => {
         }
     }
     fetchUnisexProducts()
-
+    
     const postItem = async () => {
         if (sendReq) {
             try {

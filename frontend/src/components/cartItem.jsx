@@ -13,7 +13,7 @@ const CartItems = (props) => {
     product_name: props.name,
     product_price: props.price,
     product_img: props.pic,
-    user_id: 999,
+    user_id: null,
     quantity: 1,
   })
 

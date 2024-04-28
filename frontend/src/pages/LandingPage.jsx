@@ -31,7 +31,7 @@ const LandingPage = () => {
                 Much More Than Perfume
             </p>
             <button className='shop-button'>
-                <Link to={`/home`}>
+                <Link to={`/login`}>
                     SHOP NOW
                 </Link>                
             </button>

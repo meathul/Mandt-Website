@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import './App.css';
 import Cart from "./pages/Cart";
 import { ChakraProvider } from '@chakra-ui/react'
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
            <Route path="/" element={<LandingPage/>}/>
+           <Route path="/login" element={<Login/>}/>
            <Route path="/home" element={<Home/>}/>
            <Route path="/cart" element={<Cart/>}/>
         </Routes>
