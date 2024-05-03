@@ -20,6 +20,7 @@ const Products = (props) => {
                 </p>
             </div>
             <img src={line_cart} alt="" className='product-line'/>
+            {/* delete props.price and props.pic..........later delete props.name when deleting console.log */}
             <button className='product-cart' onClick={() => props.cartButtonClick(props.id, props.name, props.price, props.pic)}>
                 <img src={cartimg} alt="" />
             </button>

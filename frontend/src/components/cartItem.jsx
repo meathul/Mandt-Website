@@ -9,10 +9,10 @@ const CartItems = (props) => {
   const [sendReq, setSendReq] = useState(false)
  
   const [cartItem, SetCartItem] = useState({
-    product_id: props.prd_id,
-    product_name: props.name,
-    product_price: props.price,
-    product_img: props.pic,
+    id: props.prd_id,
+    name: props.name,
+    price: props.price,
+    img: props.pic,
     user_id: null,
     quantity: 1,
   })
@@ -21,11 +21,6 @@ const CartItems = (props) => {
   const testID = location.pathname
 
   useEffect(() => {
-    /* const updateQnt = () => {
-        setQuantity(props.quantity)
-    }
-    updateQnt() */
-
     const updateDB = async () => {
         if (sendReq){
             try {
@@ -59,7 +54,7 @@ const CartItems = (props) => {
   
   return (
     <div className='cart-item'>
-        <img src={props.pic} alt="" className='item-img'/>
+        <img src={`images/${props.img}`} alt="" className='item-img'/>
         <div className='item-tile'>
             <div className='flex flex-col'>
                 <h1 className='item-title'>

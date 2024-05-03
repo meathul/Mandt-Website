@@ -18,16 +18,22 @@ const Home = () => {
   const [pf_women, setPF_women] = useState([])
   const [pf_men, setPF_men] = useState([])
   const [pf_unisex, setPF_unisex] = useState([])
+  const [cart, setCart] = useState([])
   const [sendReq, setSendReq] = useState(false)
 
   const toast = useToast()
  
-  const [item, setItem] = useState({
+  /* const [item, setItem] = useState({
     product_id: null,
     product_name: "",
     product_price: null,
     product_img: "",
     user_id: null,
+    quantity: 1,
+  }) */
+  
+  const [item, setItem] = useState({
+    id: null,
     quantity: 1,
   })
   
@@ -60,15 +66,33 @@ const Home = () => {
         }
     }
     fetchUnisexProducts()
+    const fetCart = async () => {
+        try {
+            const res = await axios.get("http://localhost:8800/cart")
+            setCart(res.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    fetCart();
     
     const postItem = async () => {
         if (sendReq) {
-            try {
-                await axios.post("http://localhost:8800/cart", item)
-                console.log(item.product_name + ' added');
-            } catch (err) {
-                console.log(err)
+            let checkif = false
+            cart.map((c) => {
+                if (c.product_id == item.id) {
+                    checkif = true;
+                }
+            })
+            if (!checkif) {
+                try {
+                    await axios.post("http://localhost:8800/cart", item)
+                    //console.log(item.product_name + ' added');
+                } catch (err) {
+                    console.log(err)
+                }
             }
+            setSendReq(false)
         }
     }
     postItem()
@@ -77,18 +101,23 @@ const Home = () => {
 
 
   const cartButtonClick = (id, name, price, pic) => {
-    console.log(id, name, price, pic);
+    //console.log(id, name, price, pic);
 
-    setSendReq(true)
-
-    setItem({
+    /* setItem({
         product_id: id,
         product_name: name,
         product_price: price,
         product_img: pic,
-        user_id: 999,
+        user_id: null,
         quantity: 1
+    }) */
+
+    setItem({
+        id: id,
+        quantity: 1,
+        total_price: price
     })
+
 
     toast({
         title: `${name} added to Cart`,
@@ -96,7 +125,17 @@ const Home = () => {
         duration: 3000,
         isClosable: true,
     })
+    setSendReq(true)
+  }
 
+  const logoutButton = async () => {
+    try {
+        console.log("logging out")
+        window.location.href="http://localhost:3000/"
+        await axios.post("http://localhost:8800/logout", { data: 0 })
+    } catch (err) {
+        console.log(err)
+    }
   }
   /*
   useEffect(() => {
@@ -107,7 +146,9 @@ const Home = () => {
     <>
         <div className='flex flex-col items-center'>
             <div className="home-header">
-                <img src={prf} alt="" className='home-img' />
+                <button onClick={logoutButton}>
+                    <img src={prf} alt="" className='home-img' />
+                </button>
                 <button>
                     <Link to={'/'}>
                         <p className='home-logo'>

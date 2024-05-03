@@ -26,16 +26,23 @@ const Cart = () => {
     fetchCart()
     if (calcPrice) {
         cart.map((items) => {
-            setMRP(prev => (prev + (items.product_price * items.quantity)))
+            console.log(items.img)
+            setMRP(prev => (prev + (items.price * items.quantity)))
             setCalcPrice(false)
         }) 
     }
   }, [cart, calcPrice]);
 
+  //ive updated this.......check for errors
   const deleteButtonClick = async (id) => {
     try {
         await axios.delete("http://localhost:8800/cart/"+id)
-        window.location.reload()
+        cart.map((items) => {
+            if (items.order_id == id){
+                setMRP(-1*(items.price))
+            }
+        })
+        setCalcPrice(true)
     } catch (err) {
         console.log(err)
     }
@@ -62,7 +69,7 @@ const Cart = () => {
                     Object.keys(cart).length === 0 ? 
                         <p className='item-empty'>Your cart is empty</p> : 
                         cart.map((cartItem) => (
-                            <CartItems id={cartItem.order_id} prd_id={cartItem.product_id} pic={cartItem.product_img} name={cartItem.product_name} price={cartItem.product_price} deleteButtonClick={deleteButtonClick} quantity={cartItem.quantity}/>
+                            <CartItems id={cartItem.order_id} prd_id={cartItem.id} img={cartItem.img} name={cartItem.name} price={cartItem.price} deleteButtonClick={deleteButtonClick} quantity={cartItem.quantity}/>
                         )) 
                 }
             </div>

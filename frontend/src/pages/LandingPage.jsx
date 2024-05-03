@@ -7,6 +7,7 @@ import line from '../assets/line.png'
 import ourStory from '../assets/ourStory.png'
 import { motion, useInView, useAnimation } from "framer-motion"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 const LandingPage = () => {
@@ -20,6 +21,20 @@ const LandingPage = () => {
     }
   }, [isInView, mainControls]);
 
+  const handleClick = async () => {
+    try {
+        const res = await axios.get("http://localhost:8800/landingpage")
+        if (res.data != 0) {
+            window.location.href = "http://localhost:3000/home"
+        }
+        else{
+            window.location.href = "http://localhost:3000/login"
+        }
+    } catch (err) {
+        console.log(err)
+    }
+  }
+
   return (
     <div> 
         <div className='intro-container'
@@ -30,10 +45,8 @@ const LandingPage = () => {
             <p className="intro">
                 Much More Than Perfume
             </p>
-            <button className='shop-button'>
-                <Link to={`/login`}>
-                    SHOP NOW
-                </Link>                
+            <button className='shop-button' onClick={handleClick}>
+                SHOP NOW               
             </button>
         </div>
         <div>
