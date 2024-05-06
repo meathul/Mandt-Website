@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './home.css'
 import pd1 from '../assets/macaron_rose.png'
 import pd2 from '../assets/mermaid_moon.png'
@@ -12,7 +12,16 @@ import HimTile from '../components/himtile'
 import ThemTile from '../components/themtile'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useToast } from '@chakra-ui/react'
+import { useToast, useDisclosure, Button } from '@chakra-ui/react'
+import {
+    AlertDialog,
+    AlertDialogBody,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogContent,
+    AlertDialogOverlay,
+    AlertDialogCloseButton,
+} from '@chakra-ui/react'
 
 const Home = () => {
   const [pf_women, setPF_women] = useState([])
@@ -20,7 +29,9 @@ const Home = () => {
   const [pf_unisex, setPF_unisex] = useState([])
   const [cart, setCart] = useState([])
   const [sendReq, setSendReq] = useState(false)
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const cancelRef = React.useRef()
+ 
   const toast = useToast()
  
   /* const [item, setItem] = useState({
@@ -80,10 +91,12 @@ const Home = () => {
         if (sendReq) {
             let checkif = false
             cart.map((c) => {
-                if (c.product_id == item.id) {
+                console.log(c)
+                if (c.id == item.id) {
                     checkif = true;
                 }
             })
+            
             if (!checkif) {
                 try {
                     await axios.post("http://localhost:8800/cart", item)
@@ -146,9 +159,34 @@ const Home = () => {
     <>
         <div className='flex flex-col items-center'>
             <div className="home-header">
-                <button onClick={logoutButton}>
+                <button onClick={onOpen}>
                     <img src={prf} alt="" className='home-img' />
                 </button>
+                <AlertDialog
+                    motionPreset='slideInBottom'
+                    leastDestructiveRef={cancelRef}
+                    onClose={onClose}
+                    isOpen={isOpen}
+                    isCentered
+                >
+                    <AlertDialogOverlay />
+
+                    <AlertDialogContent>
+                    <AlertDialogHeader>Log Out</AlertDialogHeader>
+                    <AlertDialogCloseButton />
+                    <AlertDialogBody>
+                        Are you sure you want to Log Out from your account.
+                    </AlertDialogBody>
+                    <AlertDialogFooter>
+                        <Button ref={cancelRef} onClick={onClose}>
+                        No
+                        </Button>
+                        <Button colorScheme='red' ml={3} onClick={logoutButton}>
+                        Yes
+                        </Button>
+                    </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
                 <button>
                     <Link to={'/'}>
                         <p className='home-logo'>
@@ -170,19 +208,19 @@ const Home = () => {
         <HerTile/>
         <div className='flex flex-wrap justify-center'>
             {pf_women.map((perfume_women)=>(
-                <Products id={perfume_women.id} name={perfume_women.name} price={perfume_women.price} pic={`images/${perfume_women.img}`} cartButtonClick={cartButtonClick}/>
+                <Products id={perfume_women.id} name={perfume_women.name} price={perfume_women.price} pic={`desc_img/${perfume_women.img}`} desc={perfume_women.description} ml={perfume_women.mL}cartButtonClick={cartButtonClick}/>
             ))}
         </div>
         <HimTile/>
         <div className='flex flex-wrap justify-center'>
             {pf_men.map((perfume_men)=>(
-                <Products id={perfume_men.id} name={perfume_men.name} price={perfume_men.price} pic={`images/${perfume_men.img}`} cartButtonClick={cartButtonClick}/>
+                <Products id={perfume_men.id} name={perfume_men.name} price={perfume_men.price} pic={`desc_img/${perfume_men.img}`} desc={perfume_men.description} ml={perfume_men.mL} cartButtonClick={cartButtonClick}/>
             ))}
         </div>
         <ThemTile/>
         <div className='flex flex-wrap justify-center'>
             {pf_unisex.map((perfume_unisex)=>(
-                <Products id={perfume_unisex.id} name={perfume_unisex.name} price={perfume_unisex.price} pic={`images/${perfume_unisex.img}`} cartButtonClick={cartButtonClick}/>
+                <Products id={perfume_unisex.id} name={perfume_unisex.name} price={perfume_unisex.price} pic={`desc_img/${perfume_unisex.img}`} desc={perfume_unisex.description} ml={perfume_unisex.mL}cartButtonClick={cartButtonClick}/>
             ))}
         </div>
     </>

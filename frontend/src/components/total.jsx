@@ -53,7 +53,7 @@ const TotalBill = (props) => {
             </div> */}
         </div>
         <CoupCard discountApplied={discountApplied}/>
-        <GrandTotal total={props.mrp - ((dsc/100)*props.mrp)}/>
+        <GrandTotal total={props.mrp - ((dsc/100)*props.mrp)} length={props.length}/>
     </div>
   )
 }

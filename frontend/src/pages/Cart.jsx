@@ -13,12 +13,14 @@ const Cart = () => {
   const [cart, setCart] = useState([])
   const [mrp, setMRP] = useState(0)  
   const [calcPrice, setCalcPrice] = useState(true)
+  const [len, setLen] = useState(0)
 
   useEffect(() => {
     const fetchCart = async () => {
         try {
             const res = await axios.get("http://localhost:8800/cart")
             setCart(res.data)
+            setLen(res.data.length)
         } catch (err) {
             console.log(err)
         }
@@ -33,16 +35,10 @@ const Cart = () => {
     }
   }, [cart, calcPrice]);
 
-  //ive updated this.......check for errors
   const deleteButtonClick = async (id) => {
     try {
         await axios.delete("http://localhost:8800/cart/"+id)
-        cart.map((items) => {
-            if (items.order_id == id){
-                setMRP(-1*(items.price))
-            }
-        })
-        setCalcPrice(true)
+        window.location.reload()
     } catch (err) {
         console.log(err)
     }
@@ -74,7 +70,7 @@ const Cart = () => {
                 }
             </div>
             <div className='item-bill'>
-                <TotalBill mrp={mrp}/>
+                <TotalBill mrp={mrp} length={len}/>
             </div>
         </div>
     </div>

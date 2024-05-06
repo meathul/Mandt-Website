@@ -136,7 +136,7 @@ app.post("/cart", (req, res) => {
         req.body.quantity,
     ]   
 
-    console.log(values)
+    //console.log(values)
     db.query(q, [values], (err, data)=>{
         if(err) return res.json(err)
         return res.json("Inserted into Cart")
@@ -167,7 +167,16 @@ app.put("/cart/:id", (req, res)=>{
     })
 })
 
+//place order
 
+app.delete("/confirmed", (req, res) => {
+    const q = "DELETE FROM shoppingcart WHERE user_id = ?"
+
+    db.query(q, login_user, (err, data) => {
+        if (err) return res.json(err)
+        return res.json("Cart Item Deleted")
+    })
+})
 
 // coupons 
 app.get("/coupons", (req, res) => {

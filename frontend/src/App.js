@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import { ChakraProvider } from '@chakra-ui/react'
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Confirmed from "./components/OrderPlaced";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
            <Route path="/signup" element={<Signup/>}/>
            <Route path="/home" element={<Home/>}/>
            <Route path="/cart" element={<Cart/>}/>
+           <Route path="/confirmed" element={<Confirmed/>}/>
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
