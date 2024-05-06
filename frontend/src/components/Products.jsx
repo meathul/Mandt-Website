@@ -47,18 +47,20 @@ const Products = (props) => {
                 <img src={cartimg} alt="" />
             </button>
         </div>
+        <div className='desc-modal'>
         <Modal
-        isCentered
-        onClose={onClose}
-        isOpen={isOpen}
-        motionPreset='slideInBottom'
-        size={'3xl'}
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <Desc id={props.id} name={props.name} img={props.pic} desc={props.desc} ml={props.ml} price={props.price} cartButtonClick={handleCart}/>
-        </ModalContent>
-      </Modal>
+          isCentered
+          onClose={onClose}
+          isOpen={isOpen}
+          motionPreset='slideInBottom'
+          size={'3xl'}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <Desc id={props.id} name={props.name} img={props.pic} desc={props.desc} ml={props.ml} price={props.price} cartButtonClick={handleCart}/>
+          </ModalContent>
+        </Modal>
+        </div>
     </div>
   )
 }

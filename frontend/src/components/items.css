@@ -145,6 +145,10 @@
     text-align: start;
 }
 
+.desc-modal{
+    width: 200px;
+}
+
 .desc-container{
     display: flex;
     flex-direction: row;
@@ -242,7 +246,7 @@
     /* background-color: white; */
     width: 500px;
     height: 340px;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(5px);
     border-radius: 10px;
     display: flex;
@@ -297,5 +301,40 @@
     }
     .item-delete{
         height: 20px; 
+    }
+    .confirmed-container{
+        width: 300px;
+        height: 340px;
+    }
+    .desc-container{
+        height: 250px;
+    }
+    .desc-img-container{
+        width: 360px;
+    }
+    .desc-img{
+        height: 250px
+    }
+    .desc-ml{
+        font-size: 12px;
+        padding-inline: 14px;
+    }
+    .desc-title{
+        font-size: 25px;
+        height: 40px;
+    }
+    .desc-desc{
+        font-size: 10px;
+        padding-block: 4%;
+    }
+    .desc-price{
+        font-size: 12px;
+    }
+    .desc-button{
+        font-size: 12px;
+        gap: 15px;
+        padding-block: 0px;
+        padding-inline: 18px;
+        border-radius: 5px;
     }
 }

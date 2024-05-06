@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 import pfp from '../assets/user_pfp.png'
 
 const Signup = () => {
+  const navigate = useNavigate()
   const [SignUp, setSignUp] = useState({
     user_id: null,
     user_name: "",
@@ -83,9 +84,9 @@ const Signup = () => {
 
   return (
     <div className='signup-screen'>
-        <p className='login-logo'>
-                MANDT
-        </p>
+        <button className='login-logo' onClick={() => navigate('/')}>
+          MANDT
+        </button>
         <div className='login-container'>
           <img src={pfp} alt="" className='login-icon' />
           <input type="text" placeholder='Username' className='login-input' onChange={handleChange} name='user_name'/>

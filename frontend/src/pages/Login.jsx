@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 import pfp from '../assets/user_pfp.png'
 
@@ -13,6 +13,7 @@ const Login = () => {
   const [user, setUser] = useState([])
   const [check, setCheck] = useState(0)
   const toast = useToast()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchAllUsers = async () => {
@@ -63,9 +64,9 @@ const Login = () => {
 
   return (
     <div className='login-screen'>
-        <p className='login-logo'>
-                MANDT
-        </p>
+        <button className='login-logo' onClick={() => navigate('/')}>
+          MANDT
+        </button>
         <div className='login-container'>
           <img src={pfp} alt="" className='login-icon' />
           <input type="text" placeholder='Username' className='login-input' onChange={handleChange} name='user_name'/>

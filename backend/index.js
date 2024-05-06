@@ -1,13 +1,14 @@
 import express from "express";
 import mysql from "mysql";
 import cors from "cors";
+import 'dotenv/config'
 
 const app = express()
 
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "timonmysql10",
+    user: process.env.REACT_APP_DATABASE_USER,
+    password: process.env.REACT_APP_DATABASE_PASSWORD,
     database: "mandtdb"
 })
 
