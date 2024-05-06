@@ -1,3 +1,35 @@
+QUERIES:
+
+
+SELECT * FROM users
+
+INSERT INTO users (user_id, user_name, user_password) VALUES 
+
+SELECT * FROM users WHERE user_name = 
+
+SELECT * FROM products
+SELECT * FROM products WHERE category='men'
+SELECT * FROM products WHERE category='women'
+SELECT * FROM products WHERE category='unisex'
+
+SELECT order_id, products.id, products.name, products.price, products.img, users.user_id, quantity FROM shoppingcart JOIN products ON shoppingcart.product_id = products.id JOIN users ON shoppingcart.user_id = users.user_id WHERE users.user_id = 
+
+INSERT INTO shoppingcart (product_id, user_id, quantity) VALUES
+
+DELETE FROM shoppingcart WHERE order_id =
+
+UPDATE shoppingcart SET quantity = ? WHERE order_id = ?
+
+DELETE FROM shoppingcart WHERE user_id = ?
+
+SELECT * FROM coupons
+
+
+*****************************************************************************************************
+
+OUTPUTS 
+
+
 mysql> desc users;
 +---------------+-------------+------+-----+---------+----------------+
 | Field         | Type        | Null | Key | Default | Extra          |
