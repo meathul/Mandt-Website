@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cartimg from '../assets/Cart.png'
 
 const Desc = (props) => {
@@ -24,12 +24,3 @@ const Desc = (props) => {
 }
 
 export default Desc
-
-/* <div className='desc-container'>
-        <img src="desc_img/macaron_rose.png" alt="" className='desc-img'/>
-        <div></div>
-    </div> 
-    
-  
-
-*/

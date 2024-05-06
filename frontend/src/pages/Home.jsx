@@ -1,8 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
-import pd1 from '../assets/macaron_rose.png'
-import pd2 from '../assets/mermaid_moon.png'
-import pd3 from '../assets/golden_hour.png'
 import Products from '../components/Products'
 import prf from '../assets/profile_pic.png'
 import bag from '../assets/home_bag.png'
@@ -33,15 +30,6 @@ const Home = () => {
   const cancelRef = React.useRef()
  
   const toast = useToast()
- 
-  /* const [item, setItem] = useState({
-    product_id: null,
-    product_name: "",
-    product_price: null,
-    product_img: "",
-    user_id: null,
-    quantity: 1,
-  }) */
   
   const [item, setItem] = useState({
     id: null,
@@ -100,7 +88,6 @@ const Home = () => {
             if (!checkif) {
                 try {
                     await axios.post("http://localhost:8800/cart", item)
-                    //console.log(item.product_name + ' added');
                 } catch (err) {
                     console.log(err)
                 }
@@ -114,17 +101,6 @@ const Home = () => {
 
 
   const cartButtonClick = (id, name, price, pic) => {
-    //console.log(id, name, price, pic);
-
-    /* setItem({
-        product_id: id,
-        product_name: name,
-        product_price: price,
-        product_img: pic,
-        user_id: null,
-        quantity: 1
-    }) */
-
     setItem({
         id: id,
         quantity: 1,
@@ -150,11 +126,6 @@ const Home = () => {
         console.log(err)
     }
   }
-  /*
-  useEffect(() => {
-    
-  }, [item, sendReq])*/
-
   return (
     <>
         <div className='flex flex-col items-center'>
@@ -228,42 +199,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-/*
-
-/*
-  useEffect(() =>{
-    const fetchMenProducts = async () => {
-        try {
-            const res = await axios.get("http://localhost:8800/products/men")
-            setPF_men(res.data)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-    fetchMenProducts()
-  }, []);
-
-  useEffect(() =>{
-    const fetchUnisexProducts = async () => {
-        try {
-            const res = await axios.get("http://localhost:8800/products/unisex")
-            setPF_unisex(res.data)
-        } catch (err) {
-            console.log(err)
-        }
-    }
-    fetchUnisexProducts()
-  }, []);
-  
-
-
-<Products name="Macaron Rose" pic={pd1} price="₹1599"/>
-        <Products name="Mermaid Moon" pic={pd2} price="₹1950"/>
-        <Products name="Golden Hour" pic={pd3} price="₹1550"/>
-
-display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-*/

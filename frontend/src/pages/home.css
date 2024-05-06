@@ -4,8 +4,6 @@
     background: linear-gradient(135deg, #9D6A3D 35%, #D0BBA8);
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .signup-screen{
@@ -14,8 +12,6 @@
     background: linear-gradient(45deg, #9D6A3D 35%, #D0BBA8);
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .login-icon{

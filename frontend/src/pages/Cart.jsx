@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import back from '../assets/backarrow.png'
-import cartline from '../assets/cartLine.png'
-import pd1 from '../assets/macaron_rose.png'
-import pd2 from '../assets/mermaid_moon.png'
 import CartItems from '../components/cartItem'
 import TotalBill from '../components/total'
 import { Link } from 'react-router-dom'
@@ -78,16 +75,3 @@ const Cart = () => {
 }
 
 export default Cart
-
-
-/*
-<CartItems pic={pd1} name="Macaron Rose" price="69"/>
-<CartItems pic={pd1} name="Macaron Rose" price="69"/>
-<CartItems pic={pd1} name="Macaron Rose" price="69"/>
-<CartItems pic={pd1} name="Macaron Rose" price="69"/>
-
-
-<div className='item-bill'>
-                <TotalBill/>
-            </div>
-*/

@@ -1,7 +1,6 @@
 import React from 'react'
 import './items.css'
 import { useToast } from '@chakra-ui/react'
-import Confirmed from './OrderPlaced'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 

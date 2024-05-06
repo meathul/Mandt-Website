@@ -9,16 +9,18 @@ mysql> desc users;
 3 rows in set (0.03 sec)
 
 mysql> desc products;
-+----------+--------------+------+-----+---------+----------------+
-| Field    | Type         | Null | Key | Default | Extra          |
-+----------+--------------+------+-----+---------+----------------+
-| id       | int          | NO   | PRI | NULL    | auto_increment |
-| name     | varchar(100) | NO   |     | NULL    |                |
-| category | varchar(50)  | NO   |     | NULL    |                |
-| price    | int          | NO   |     | NULL    |                |
-| img      | varchar(45)  | NO   |     | NULL    |                |
-+----------+--------------+------+-----+---------+----------------+
-5 rows in set (0.01 sec)
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(100) | NO   |     | NULL    |                |
+| category    | varchar(50)  | NO   |     | NULL    |                |
+| price       | int          | NO   |     | NULL    |                |
+| img         | varchar(45)  | NO   |     | NULL    |                |
+| description | varchar(500) | NO   |     | NULL    |                |
+| mL          | int          | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
 
 mysql> desc shoppingcart;
 +------------+------+------+-----+---------+----------------+
@@ -51,28 +53,29 @@ mysql> select * from users;
 2 rows in set (0.01 sec)
 
 mysql> select * from products;
-+-----+----------------+----------+-------+--------------------+
-| id  | name           | category | price | img                |
-+-----+----------------+----------+-------+--------------------+
-| 101 | Macaron Rose   | women    |  1599 | macaron_rose.png   |
-| 102 | Mermaid Moon   | women    |  1950 | mermaid_moon.png   |
-| 103 | Golden Hour    | women    |  1550 | golden_hour.png    |
-| 104 | Woman          | women    |  3500 | woman.png          |
-| 105 | Dirty Vanilla  | women    |  2500 | dirty_vanilla.png  |
-| 106 | Flower Hour    | women    |  4000 | flower_hour.png    |
-| 107 | Dark Oud       | men      |  2500 | dark_oud.png       |
-| 108 | Aman           | men      |  4000 | aman.png           |
-| 109 | Santal Trouble | men      |  5000 | santal_trouble.png |
-| 110 | Ruby Moon      | men      |  1299 | ruby_moon.png      |
-| 111 | Somebody Wood  | men      |  1799 | somebody_wood.png  |
-| 112 | Father Figure  | men      |  1799 | father_figure.png  |
-| 113 | Palm           | unisex   |  3000 | palm.png           |
-| 114 | Chai Epice     | unisex   |  1599 | chai_epice.png     |
-| 115 | Slow Fire      | unisex   |  2200 | slow_fire.png      |
-| 116 | Savage         | unisex   |  1599 | savage.png         |
-| 117 | Clean          | unisex   |  4000 | clean.png          |
-| 118 | Khanjar        | unisex   |  2000 | khanjar.png        |
-+-----+----------------+----------+-------+--------------------+
++-----+----------------+----------+-------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----+
+| id  | name           | category | price | img                | description
+                                                                                       | mL |
++-----+----------------+----------+-------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----+
+| 101 | Macaron Rose   | women    |  1599 | macaron_rose.png   |  Fresh petals of Bulgarian rose and delicate notes of bergamot. A lush bouquet of velvety rose absolute and romantic peony unfolds, enveloping you in a cloud of feminine allure. | 30 |
+| 102 | Mermaid Moon   | women    |  1950 | mermaid_moon.png   | A velvety base of amber and vanilla wraps you in a comforting embrace, like the last rays of sunshine lingering on your skin.                                                     | 30 |
+| 103 | Golden Hour    | women    |  1550 | golden_hour.png    | Opens with a symphony of citrusy bergamot.Sweet honeysuckle and creamy tuberose intoxicate the senses                                                                             | 30 |
+| 104 | Woman          | women    |  3500 | woman.png          | A burst of juicy blackcurrant and tangy raspberry.  Velvety rose and intoxicating jasmine lending to an air of romance and mystery.                                               | 90 |
+| 105 | Dirty Vanilla  | women    |  2500 | dirty_vanilla.png  | A bouquet of white flowers, including water lily and lotus blossom. A sultry base of vanilla and patchouli                                                                        | 30 |
+| 106 | Flower Hour    | women    |  4000 | flower_hour.png    | Symphony of citrusy bergamot and sparkling grapefruit. Delicate floral notes of jasmine and lily of the valley dance at its heart, evoking the essence of a blooming garden.      | 90 |
+| 107 | Dark Oud       | men      |  2500 | dark_oud.png       | Bold notes of black pepper and spicy cardamom awaken the senses, evoking the allure of a dimly lit jazz club.                                                                     | 90 |
+| 108 | Aman           | men      |  4000 | aman.png           |  Icy mint and zesty bergamot evoke the chill of a snow-capped peak, while a heart of woody cedarwood and aromatic sage brings warmth and depth.                                   | 30 |
+| 109 | Santal Trouble | men      |  5000 | santal_trouble.png | Woody sandalwood and earthy patchouli  A base of rugged leather and smoky vetiver captures the essence of wild landscapes and untamed spirit.                                     | 50 |
+| 110 | Ruby Moon      | men      |  1299 | ruby_moon.png      | Spicy notes of black pepper and cinnamon, while a heart of creamy cedarwood and velvety amber bring warmth and sensuality.                                                        | 30 |
+| 111 | Somebody Wood  | men      |  1799 | somebody_wood.png  |  Zesty citrus and crisp Ambergris. A hint of smoky leather in the base lends a touch of masculinity.                                                                              | 30 |
+| 112 | Father Figure  | men      |  1799 | father_figure.png  | A touch of spicy ginger adds warmth and depth, while a base of musk and amber grounds the fragrance, leaving a lasting impression wherever you go.                                | 30 |
+| 113 | Palm           | unisex   |  3000 | palm.png           | Exotic oud add depth and mystery, while creamy sandalwood and vanilla lend a touch of warmth and sensuality.                                                                      | 90 |
+| 114 | Chai Epice     | unisex   |  1599 | chai_epice.png     | Delicate hints of floral jasmine and cardamom emerge, adding a touch of romance and sophistication                                                                                | 30 |
+| 115 | Slow Fire      | unisex   |  2200 | slow_fire.png      | Comforting embrace of sandalwood and cedarwood ,entwined with subtle sweetness of vanilla and a hint of aromatic cinnamon                                                         | 90 |
+| 116 | Savage         | unisex   |  1599 | savage.png         |  Sparkling top notes of bergamot and mandarin evoke the brilliance of a sunlit sky, while a heart of blue lotus and sea salt adds depth and intrigue                              | 30 |
+| 117 | Clean          | unisex   |  4000 | clean.png          |   Burst of citrusy brightness, with vibrant notes of bergamot and mandarin intertwine with a hint of floral elegance                                                              | 30 |
+| 118 | Khanjar        | unisex   |  2000 | khanjar.png        | Opens with a burst of spicy saffron and cardamom. As the fragrance unfolds, rich and resinous oud wood takes center stage with a harmonious blend of floral notes.                | 90 |
++-----+----------------+----------+-------+--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----+
 18 rows in set (0.00 sec)
 
 mysql> select * from shoppingcart;

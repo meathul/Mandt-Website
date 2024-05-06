@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 import pfp from '../assets/user_pfp.png'
 
@@ -11,7 +11,6 @@ const Login = () => {
     user_password: "",
   })
   const [user, setUser] = useState([])
-  const [check, setCheck] = useState(0)
   const toast = useToast()
   const navigate = useNavigate()
 

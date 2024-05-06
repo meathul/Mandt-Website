@@ -86,9 +86,3 @@ const CartItems = (props) => {
 }
 
 export default CartItems
-
-
-
-/*
-
-*/
