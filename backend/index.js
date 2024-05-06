@@ -113,7 +113,7 @@ app.get("/products/unisex", (req, res)=>{
 
 app.get("/cart", (req, res) => {
     const q = "SELECT order_id, products.id, products.name, products.price, products.img, users.user_id, quantity FROM shoppingcart JOIN products ON shoppingcart.product_id = products.id JOIN users ON shoppingcart.user_id = users.user_id WHERE users.user_id = ?;"
-    //const q = "SELECT * FROM cart where `user_id` = ?"
+
     const userID = login_user
 
     db.query(q, userID, (err, data)=>{
@@ -127,7 +127,6 @@ app.get("/cart", (req, res) => {
 })
 
 app.post("/cart", (req, res) => {
-    //const q = "INSERT INTO cart (`product_id`, `product_name`, `product_price`, `product_img`, `user_id`, `quantity`) VALUES (?)"
     const q = "INSERT INTO shoppingcart (`product_id`, `user_id`, `quantity`) VALUES (?)"
     console.log("inserting into cart")
 
@@ -195,95 +194,3 @@ app.get("/coupons", (req, res) => {
 app.listen(8800, () => {
     console.log("Connected to backend !")
 })
-
-
-
-
-
-
-
-/*
-
-app.get("/cart", (req, res) => {
-    const q = "SELECT * FROM cart where `user_id` = ?"
-    const userID = login_user
-
-    db.query(q, userID, (err, data)=>{
-        if(err) {
-            return res.json(err)
-        } 
-        else {
-            return res.json(data)
-        }
-    })
-})
-
-app.post("/cart", (req, res) => {
-    const q = "INSERT INTO cart (`product_id`, `product_name`, `product_price`, `product_img`, `user_id`, `quantity`) VALUES (?)"
-    console.log("inserting into cart")
-
-    const values = [
-        req.body.product_id,
-        req.body.product_name,
-        req.body.product_price,
-        req.body.product_img,
-        login_user,
-        req.body.quantity,
-    ]
-
-    console.log(values)
-    db.query(q, [values], (err, data)=>{
-        if(err) return res.json(err)
-        return res.json("Inserted into Cart")
-    })
-})
-
-app.delete("/cart/:id", (req, res) => {
-    const cartID = req.params.id
-    const q = "DELETE FROM cart WHERE order_id = ?"
-
-    db.query(q, [cartID], (err, data) => {
-        if (err) return res.json(err)
-        return res.json("Cart Item Deleted")
-    })
-})
-
-
-app.put("/cart/:id", (req, res)=>{
-    const cartID = req.params.id
-    const q = "UPDATE cart SET `quantity` = ? WHERE order_id = ?";
-
-    const values = [
-        req.body.quantity
-    ]
-
-    db.query(q, [...values, cartID], (err, data)=>{
-        if(err) return res.json(err)
-        return res.json("Quantity has been updated")
-    })
-})
-
-
-*/
-
-
-
-
-
-// ALTER TABLE cart CHANGE COLUMN `user_id` `user_id` INT NOT NULL DEFAULT 555;
-
-
-
-
-/*
-app.get("/selected/:id", (req, res)=>{
-    const productID = req.params.id
-    const q = "SELECT * FROM products WHERE id = ?"
-
-    db.query(q, [productID], (err, data)=>{
-        if(err) return res.json(err)
-        return res.json(data)
-    })
-})
-
-*/
